@@ -13,18 +13,40 @@ builder:
         destDir: dist
         appFolder: webapp
         nameSpace: br/com/namespace
+        
     - name: webide-extension-task-updateManifestJson
       afterTask: webide-extension-task-updateNeoApp
       configuration:
         appFolder: webapp
         destDir: dist
+        
     - name: webide-extension-task-lint
       afterTask: webide-extension-task-updateManifestJson
       configuration:
         destDir: dist
         appFolder: webapp
         nameSpace: br/com/namespace 
+        
     - name: webide-extension-task-resources
       afterTask: webide-extension-task-lint
       configuration:
         nameSpace: br/com/namespace
+    
+    - name: ui5-task-nwabap-deployer
+      afterTask: generateVersionInfo
+      configuration: 
+        resources:
+          path: dist
+          pattern: "**/*.*"
+        connection:
+          server: http://YOUR_FIORI_HOST:PORT
+        authentication:
+          user: SAP_USERNAME
+          password: SAP_PASSWORD
+        ui5:
+          language: PT
+          package: Z_PACKAGE
+          bspContainer: Z_BSP_APP_NAME
+          bspContainerText: Descrição da Aplicação BSP
+          transportNo: TRANSPORTE_REQUEST_NUMBER
+          calculateApplicationIndex: true
