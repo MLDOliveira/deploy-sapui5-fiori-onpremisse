@@ -47,7 +47,7 @@ Copie o trecho de código abaixo para o final seu arquivo ui5.yaml
           calculateApplicationIndex: true
 ```
 
-Após isso, preencha as informações abaixo conforme as instruções
+Após isso, preencha cada campo conforme as instruções abaixo
 
 * server: Aqui você deve informar a URL com porta (anotado nos pré-requisitos) para acesso ao seu ambiente FIORI, caso não saiba essa informação entre na transação 
 * client: Mandante
@@ -69,7 +69,7 @@ Após essas configurações volte a linha de comando e execute o comando "npm ru
 ![build](https://github.com/MLDOliveira/deploy-sapui5-fiori-onpremisse/blob/master/webapp/images/build.png)
 
 ### 6. Confirmando deploy no seu ambiente SAP ERP
-Para confirmar que o deploy foi realizado com sucesso, acesse o seu ambiente SAP, entre na transação SE80, selecione aplicações BSP e procure pelo nome da aplicação informado no campo bspContainer do passo 3!.
+Para confirmar se o deploy foi realizado com sucesso, acesse o seu ambiente SAP, entre na transação SE80, selecione aplicações BSP e procure pelo nome da aplicação informado no campo bspContainer do passo 3.
 
 ## Fontes
 * https://github.com/pfefferf/ui5-nwabap-deployer/blob/master/packages/grunt-nwabap-ui5uploader/README.md
