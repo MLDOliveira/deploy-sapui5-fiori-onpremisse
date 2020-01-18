@@ -72,7 +72,7 @@ Após essas configurações volte a linha de comando e execute o comando "npm ru
 Para confirmar se o deploy foi realizado com sucesso, acesse o seu ambiente SAP, entre na transação SE80, selecione aplicações BSP e procure pelo nome da aplicação informado no campo bspContainer do passo 3.
 
 ## Fontes
-* https://github.com/pfefferf/ui5-nwabap-deployer/blob/master/packages/grunt-nwabap-ui5uploader/README.md
+* https://github.com/pfefferf/ui5-nwabap-deployer/blob/master/packages/grunt-nwabap-ui5uploader
 
 
 # EN - Versão em inglês
