@@ -4,8 +4,8 @@
 Como configurar seu projeto SAPUI5 para realizar deploy diretamente no ambiente FIORI on-premisse
 
 ## O que você irá aprender
-* Como fazer build e deploy da sua aplicação SAPUI5 em um ambiente local?
-* Como fazer deploy diretamente no seu ambiente FIORI através da linha de comando da sua IDE de desenvolvimento?
+* Como fazer build e deploy da sua aplicação SAPUI5 em um ambiente local.
+* Como fazer deploy diretamente no seu ambiente FIORI através da linha de comando da sua IDE de desenvolvimento.
 
 ## Pré-requisitos
 * Dentro do seu ambiente SAP acessar a transação SMICM, ir no menu "Ir Para > Serviços", anote o HOST e a PORTA que estão na linha HTTP para utilizar posteriormente
@@ -75,7 +75,7 @@ Para confirmar se o deploy foi realizado com sucesso, acesse o seu ambiente SAP,
 * https://github.com/pfefferf/ui5-nwabap-deployer/blob/master/packages/grunt-nwabap-ui5uploader
 
 
-# EN - Versão em inglês
+# EN - English version
 
 
 
