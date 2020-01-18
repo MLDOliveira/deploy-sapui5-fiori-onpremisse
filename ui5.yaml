@@ -40,6 +40,7 @@ builder:
           pattern: "**/*.*"
         connection:
           server: http://YOUR_FIORI_HOST:PORT
+          client: 100
         authentication:
           user: SAP_USERNAME
           password: SAP_PASSWORD
