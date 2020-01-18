@@ -4,11 +4,11 @@
 Como configurar seu projeto SAPUI5 para realizar deploy diretamente no ambiente FIORI on-premisse
 
 ## O que você irá aprender
-Como fazer build e deploy da sua aplicação SAPUI5 em um ambiente local?
-Como fazer deploy diretamente no seu ambiente FIORI através da linha de comando da sua IDE de desenvolvimento?
+* Como fazer build e deploy da sua aplicação SAPUI5 em um ambiente local?
+* Como fazer deploy diretamente no seu ambiente FIORI através da linha de comando da sua IDE de desenvolvimento?
 
 ## Pré-requisitos
-* Dentro do seu ambiente SAP acessar a transação SMICM, ir no menu "Ir Para > Serviços", anote o HOST e a PORTA para utilizar posteriormente
+* Dentro do seu ambiente SAP acessar a transação SMICM, ir no menu "Ir Para > Serviços", anote o HOST e a PORTA que estão na linha HTTP para utilizar posteriormente
 
 ## Passo a passo
 
@@ -17,14 +17,35 @@ Copie os arquivos .npmrc, Gruntfile.js desse projeto para seu projeto
 
 ### 2. Configurando package.json
 Verifique o arquivo package.json desse projeto e adicione as dependências ao arquivo package.json do seu projeto
+
 ![package.json](https://github.com/MLDOliveira/deploy-sapui5-fiori-onpremisse/blob/master/webapp/images/package-json.png)
 
 ### 3. Configurando arquivo ui5.yaml
 A configuração do arquivo ui5.yaml é importântissíma para o correto funcionando do build e deploy, leia abaixo como cada campo deve ser preenchido
 
-Copie o trecho de código conforme a imagem abaixo para seu arquivo ui5.yaml
+Copie o trecho de código abaixo para o final seu arquivo ui5.yaml
 
-![ui5.yaml](https://github.com/MLDOliveira/deploy-sapui5-fiori-onpremisse/blob/master/webapp/images/ui5-yaml.png)
+```javascript
+ - name: ui5-task-nwabap-deployer
+      afterTask: generateVersionInfo
+      configuration: 
+        resources:
+          path: dist
+          pattern: "**/*.*"
+        connection:
+          server: http://YOUR_FIORI_HOST:PORT
+          client: 100
+        authentication:
+          user: SAP_USERNAME
+          password: SAP_PASSWORD
+        ui5:
+          language: PT
+          package: Z_PACKAGE
+          bspContainer: Z_BSP_APP_NAME
+          bspContainerText: Descrição da Aplicação BSP
+          transportNo: TRANSPORTE_REQUEST_NUMBER
+          calculateApplicationIndex: true
+```
 
 Após isso, preencha as informações abaixo conforme as instruções
 
@@ -39,18 +60,15 @@ Após isso, preencha as informações abaixo conforme as instruções
 * transportNo: Número da request onde as alterações serão gravadas
 
 ### 4. Instalando dependências
-
 Na linha de comando dentro da pasta do seu projeto execute o comando "npm install" e aguarde a finalização das instalações. 
 Veja o log gerado e se necessário, execute o comando "npm audit fix" para corrigir erros da instalação de pacotes.
 
 ### 5. Fazendo build e deploy
-
 Após essas configurações volte a linha de comando e execute o comando "npm run build", ao executar esse comando ele irá fazer o build do seu projeto criando a pasta /dist/ e em seguida irá fazer o upload dessa pasta para o seu ambiente SAP FIORI, o resultado deve algo parecido com a imagem abaixo.
 
 ![build](https://github.com/MLDOliveira/deploy-sapui5-fiori-onpremisse/blob/master/webapp/images/build.png)
 
 ### 6. Confirmando deploy no seu ambiente SAP ERP
-
 Para confirmar que o deploy foi realizado com sucesso, acesse o seu ambiente SAP, entre na transação SE80, selecione aplicações BSP e procure pelo nome da aplicação informado no campo bspContainer do passo 3!.
 
 ## Fontes
