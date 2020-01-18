@@ -66,7 +66,7 @@ Veja o log gerado e se necessário, execute o comando "npm audit fix" para corri
 ### 5. Fazendo build e deploy
 Após essas configurações volte a linha de comando e execute o comando "npm run build", ao executar esse comando ele irá fazer o build do seu projeto criando a pasta /dist/ e em seguida irá fazer o upload dessa pasta para o seu ambiente SAP FIORI, o resultado deve algo parecido com a imagem abaixo.
 
-![build](https://github.com/MLDOliveira/deploy-sapui5-fiori-onpremisse/blob/master/webapp/images/build.png)
+![build](https://github.com/MLDOliveira/deploy-sapui5-fiori-onpremisse/blob/master/webapp/images/build-deploy.png)
 
 ### 6. Confirmando deploy no seu ambiente SAP ERP
 Para confirmar se o deploy foi realizado com sucesso, acesse o seu ambiente SAP, entre na transação SE80, selecione aplicações BSP e procure pelo nome da aplicação informado no campo bspContainer do passo 3.
