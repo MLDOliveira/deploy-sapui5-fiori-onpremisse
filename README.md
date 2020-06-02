@@ -13,7 +13,7 @@ Como configurar seu projeto SAPUI5 para realizar deploy diretamente no ambiente 
 ## Passo a passo
 
 ### 1. Copiando arquivos
-Copie os arquivos .npmrc, Gruntfile.js desse projeto para seu projeto
+Copie os arquivos .npmrc, Gruntfile.js, .babelrc e babel.config.js desse projeto para seu projeto
 
 ### 2. Configurando package.json
 Verifique o arquivo package.json desse projeto e adicione as dependências ao arquivo package.json do seu projeto
